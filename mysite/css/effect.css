@@ -81,7 +81,6 @@ ul{
 	display: flex;
 	flex-direction: column;
 	width: 180px;
-
 }
 ul li{
 	list-style: none;

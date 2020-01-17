@@ -21,20 +21,3 @@ a{
 	text-decoration: none;
 }
 
-/* text에 밑줄쳐지는 CSS 효과 */
-.magicline:after{
-	content : '';
-	display: block;
-	width: 0;
-	height: 2.5px;
-	background-color: #F7B8B4;
-	transition: width .3s;
-}
-.magicline:hover:after{
-	width: 100%;
-}
-
-/* 판넬 3D CSS 효과*/
-.layer{
-	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
-}
