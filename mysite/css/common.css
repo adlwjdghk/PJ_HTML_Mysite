@@ -1,6 +1,7 @@
 /* 구글 웹폰트 */
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fruktur|Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sunflower:300&display=swap');
 /* 공통사항 */
 * {box-sizing: border-box;}
 body{
@@ -9,7 +10,7 @@ body{
 	padding: 0;
 	font-size: 14px;
 	color: #171616;
-	background-color: #f1f1f1;
+	background-color: #f1f1f163;
 }
 ul{
 	margin: 0;

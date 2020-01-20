@@ -6,7 +6,7 @@
 	<script src="https://kit.fontawesome.com/e2a7455480.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="../css/common.css">
 	<link rel="stylesheet" type="text/css" href="../css/effect.css">
-	<link rel="icon" type="image/png" href="../img/20200117_112527.png">
+	<link rel="icon" type="image/png" href="../img/foot.png">
 	<style type="text/css">
 		
 		.wrap{
@@ -23,7 +23,6 @@
 		.side_wrap{
 			border: 1px solid red;
 			width: 450px;
-			height: 1000px;
 			margin-right: 25px;
 		}
 		.side_picture{
@@ -58,44 +57,198 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			height: 106px;
+			height: 165px;
 		}
 		.side_personal i{
 			color: #30B08F;
 			width: 20px;
+
 		}
 		.side_sns{
 			border-top: 1px solid #eee;
 			padding: 15px 0;
 		}
-		.nav{
-			margin-top: 25px;
+		.common_panel{
+			margin-bottom: 25px;
 		}
 		.menu_title{
-			background-color: #56C19F;
-			margin-top: 25px;
+			background-color: #30B08F;
+			/*margin-top: 25px;*/
 			font-weight: bold; 
 			padding: 8px 15px;
 			font-size: 18px;
 			border-top-left-radius: 2px; 
 			border-top-right-radius: 2px;
 			color: #595959;
-			/*display: flex;
-			align-items: center;*/
+			display: flex;
+			align-items: center;
+			color: #f1f1f1;
+
 		}
 		.menu_title i{
 			width: 20px;
 		}
-
+		.menu_title span{
+			padding: 0 5px;
+			text-align: center;
+		}
+		
 		/* 소개 내용 */
 		.content_wrap{
 			border: 1px solid blue;
 			width: 850px;
-			height: 1000px;
+		}
+		.content_padding{
+			padding: 15px;
+		}
+		.bar_wrap{
+			margin-bottom: 15px; 
+		}
+		.bar_border{
+			width: 815px;
+			height: 20px;
+			border: 1px solid #f1f1f1;
+			overflow: hidden;
+			border-radius: 16px;
+			background-color: #EBF6C9;
+		}
+		.bar_fill{
+			width: 0;
+			height: 25px;
+			background-color: #9CDDA9;
+			padding: 0 15px;
+			text-align: center;
+			line-height: 20px;
+			font-weight: bold;
+			font-size: 13px;
+			color: white;
+
+		}
+		.skil_title{
+			padding: 8px 0px 8px 5px;
+		}
+		.content_padding > .bar_wrap:last-child{
+			margin: 0;
+		}
+		.content_padding > table{
+			width: 100%;
+			border-collapse: collapse;
+		}
+		table, th, td{
+			border: 1px solid #2f3138;
+		}
+		th, td{
+			padding: 5px;
+		}
+		th{
+			background-color: #9CDDA9;
+		}
+		/* nth-child 중간자식을 선택할때 쓰는 단어 */
+		.edu_table tr:nth-child(even){
+			background-color: #EBF6C9;
+		}
+		.edu_table td:first-child, .edu_table td:last-child{
+			text-align: center;
+		}
+		.edu_table tr:hover{
+			background-color: #ccc;
+		}
+		.download_wrap{
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 25px;
+		}
+		.download_wrap div a{
+			padding: 8px 20px;
+			color: white;
+			border-radius:5px;
+			background-color: #9CDDA9;
+		}
+		.download_wrap div a{
+			transition: transform .3s;
+		}
+		.download_wrap div a:hover{
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+			transform: scale(1.3);
+		}
+		.fix_btn{
+			position: fixed;
+			right: 30px;
+			color: white;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			/* 자식을 정가운데로 하고싶을때 */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 30px;
+			cursor: pointer;
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+		}
+		.fix_btn > i{
+			transition: transform .3s;
+		}
+		.fix_btn:hover > i{
+			transform: scale(1.3);
+		}
+		.top_btn{
+			bottom: 115px;
+			background-color: #85CDA7;
+		}
+		.conn_btn{
+			bottom: 30px;
+			background-color: #85CDA7;
+		}
+		.msg_wrap{
+			position: absolute;
+			bottom: 0;
+			right: 90px;
+			background-color: #f1f1f1;
+			border-radius: 5px;
+			border: 1px solid #2f3138;
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+		}
+		.note_wrap{
+			padding: 15px;
+			font-size: 17px;
+			width: 360px;
+		}
+		.send_info{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.send_info > input{
+			width: 150px;
+		}
+		.note_wrap > div{
+			margin-bottom: 7px;
 		}
 	</style>
 </head>
 <body>
+	<div class="top_btn fix_btn"><i class="fas fa-chevron-up"></i></div>
+	<div class="conn_btn fix_btn">
+		<div class="msg_wrap">
+			<div class="menu_title"><i class="fas fa-envelope"></i><span>Message</span></div>
+			<div class="note_wrap">
+				<div class="conn_note">Plese contact me if you are interested.</div>
+				<div class="send_info">
+					<input type="text" placeholder="Name">
+					<input type="text" placeholder="Email">
+				</div>
+				<div class="send_msg">
+					<input type="text" placeholder="Message">
+				</div>
+				<div class="send_btn">
+					<a href="#"><i class="fas fa-paper-plane"></i>&nbsp;SEND MESSAGE</a>
+				</div>
+			</div>
+		</div>	
+		<i class="fas fa-envelope"></i></div>
 	<div class="wrap">
 		<aside>
 			<div class="side_wrap">
@@ -113,6 +266,7 @@
 						<div class="side_personal">
 							<!-- icon은 텍스트로 인식함  -->
 							<div><i class="fas fa-briefcase"></i> Web Programmer</div>
+							<div><i class="fas fa-graduation-cap"></i>Master of Engineering</div>
 							<div><i class="fas fa-map-marker-alt"></i> Gwang-Ju, S.Korea</div>
 							<div><i class="far fa-envelope-open"></i> adlwjdghk@gmail.com</div>
 							<div><i class="fas fa-mobile-alt"></i> 010-0000-1234</div>
@@ -126,11 +280,10 @@
 						<li><a href="#">Education</a></li>
 						<li><a href="#">License</a></li>
 						<li><a href="#">Portfolio</a></li>
-						<li><a href="#">Contact</a></li>
 					</ul>
 				</div>	
 				<div class="nav common_panel layer">
-					<div class="menu_title"><i class="fas fa-bars"></i><span>SNS Menu</span></div>
+					<div class="menu_title"><i class="fas fa-user-friends"></i><span>&nbsp;SNS</span></div>
 					<div class="side_sns">
 						<div class="middle">
 							<a class="snsbtn" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -140,12 +293,106 @@
 							<a class="snsbtn" href="#"><i class="fab fa-youtube"></i></a>
 						</div>
 					</div>
+				</div>
+				<div class="nav common_panel layer">
+					<div class="menu_title"><i class="fas fa-cloud-download-alt"></i><span>Downloads</span></div>
+					<div class="content_padding download_wrap">
+						<div class="git_wrap">
+							<a href="https://github.com/adlwjdghk" target="_blank">Github<i class="fab fa-github"></i></a>
+						</div>
+						<div class="resume_wrap">
+							<a href="#">Resume<i class="fas fa-download"></i></a>
+						</div>
+					</div>
 				</div>	
 			</div>
 		</aside>
+
 		<section>
-			<div class="content_wrap"></div>
+			<div class="content_wrap">
+				<div class="nav common_panel layer">
+					<div class="menu_title"><i class="fas fa-laptop-code"></i><span>Tech Skills</span></div>
+					<div class="content_padding">
+						<div class="bar_wrap">
+							<div class="skil_title"><strong>Programming(JAVA)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">70%</div></div></div>
+						</div>
+						<div class="bar_wrap">
+							<div class="skil_title"><strong>Web Publishing(HTML, CSS, Javascript, jQuery)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">60%</div></div></div>
+						</div>
+						<div class="bar_wrap">
+							<div class="skil_title"><strong>Database(Oracle, MongoDB)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">50%</div></div></div>
+						</div>
+						<div class="bar_wrap">
+							<div class="skil_title"><strong>Web Develop(Servlet, Spring)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">10%</div></div></div>
+						</div>
+						<div class="bar_wrap">
+							<div class="skil_title"><strong>Version Managing Tool(GitHub)</strong></div>
+							<div><div class="bar_border"><div class="bar_fill">20%</div></div></div>
+						</div>
+					</div>
+				</div>
+				<div class="nav common_panel layer">
+					<div class="menu_title"><i class="fas fa-pencil-alt"></i><span>Education</span></div>
+					<div class="content_padding">
+						<table class="edu_table">
+							<thead>
+								<th>No</th><th>Course name</th><th>Institution</th><th>Period</th>
+							</thead>
+							<tbody>
+								<tr><td>1</td><td>응용SW엔지니어링 디지털 컨버젼스 SpringMVC 웹 서비스 개발자 양성과정</td><td>한국경영원 인재개발원</td><td>2019.11.12~2020.06.12</td></tr>
+								<!-- <tr><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+								<tr><td>3</td><td>1</td><td>1</td><td>1</td></tr>
+								<tr><td>4</td><td>1</td><td>1</td><td>1</td></tr>
+								<tr><td>5</td><td>1</td><td>1</td><td>1</td></tr>  -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="nav common_panel layer">
+					<div class="menu_title"><i class="far fa-address-card"></i><span>License</span></div>
+					<div class="content_padding">
+						<table class="edu_table">
+							<thead>
+								<th>No</th><th>License name</th><th>Institution</th><th>Period</th>
+							</thead>
+							<tbody>
+								<tr><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+								<tr><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+								<tr><td>3</td><td>1</td><td>1</td><td>1</td></tr>
+								<tr><td>4</td><td>1</td><td>1</td><td>1</td></tr>
+								<tr><td>5</td><td>1</td><td>1</td><td>1</td></tr> 
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 		</section>
 	</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// $ == jQuery : $() 
+	// 문서(document)가 화면에 띄우는걸 성공하면 그때 이런걸 실행해라  
+	// javaxcript에서는 함수를 만들때 funcion(){} 이렇게 만듬 
+	// 이름이 없는 함수 = 익명함수 라고함 
+	// 이름이 있는건 재사용을 하려고 쓰는 것 재사용할 필요없을떄 익명함수 씀 화면단이랑 어플리케이션 만들때 사용함  
+	// HTML 문서가 완료되면 동작 할 작업들 
+		// jQuery의 장점 선택자를 CSS와 동일하게 사용  
+	// 코드설명 
+	// jQuery(선택자: 누구한테 줄것인지).다 찾아서 주는것(선택자를).찾은 갯수만큼 반복돌게 해줌 Java의 foreach(function작동하는 것(){
+	//	 this에  1,2,3,4,5 반복돌때 해당 순서 들어감 .text값을 가져와라 
+	//   widthVal는 변수, js는 모든 타입을 var로 작성하면 됨 -- 실행할때 값을 보고 변수타입을 바꿔서 실행시켜줌 
+	//   1초 == 1000 IT에서는 밀리세컨드 사용함 })
+	$(document).ready(function(){ 
+		$('.bar_wrap').find('.bar_fill').each(function() {
+			var widthVal = $(this).text();
+			$(this).animate({width: widthVal}, 2000);
+		});
+	});
+	// 바깥으로 다 뺐다가 조금씩 들어오게 만든것 
+</script>
 </html>
