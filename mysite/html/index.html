@@ -16,7 +16,7 @@
 			justify-content: space-around;
 			box-sizing: border-box;
 			padding: 25px;
-			margin: 25px auto;
+			margin: 0 auto;
 		}
 
 		/* 사이드 내용 */
@@ -60,7 +60,7 @@
 			height: 165px;
 		}
 		.side_personal i{
-			color: #30B08F;
+			color: #12406a;
 			width: 20px;
 
 		}
@@ -72,7 +72,7 @@
 			margin-bottom: 25px;
 		}
 		.menu_title{
-			background-color: #30B08F;
+			background-color: #12406a;
 			/*margin-top: 25px;*/
 			font-weight: bold; 
 			padding: 8px 15px;
@@ -92,7 +92,15 @@
 			padding: 0 5px;
 			text-align: center;
 		}
-		
+		.download_text{
+			font-weight: bold;
+		}
+		.download_text {
+			transition: transform .3s;
+		}
+		.download_text:hover {
+			transform: scale(1.3);
+		}
 		/* 소개 내용 */
 		.content_wrap{
 			border: 1px solid blue;
@@ -110,19 +118,18 @@
 			border: 1px solid #f1f1f1;
 			overflow: hidden;
 			border-radius: 16px;
-			background-color: #EBF6C9;
+			background-color: #f1f1f1;
 		}
 		.bar_fill{
 			width: 0;
 			height: 25px;
-			background-color: #9CDDA9;
+			background-color: #adbed2;
 			padding: 0 15px;
 			text-align: center;
 			line-height: 20px;
 			font-weight: bold;
 			font-size: 13px;
 			color: white;
-
 		}
 		.skil_title{
 			padding: 8px 0px 8px 5px;
@@ -141,12 +148,15 @@
 			padding: 5px;
 		}
 		th{
-			background-color: #9CDDA9;
+			background-color: #eb8f90;
 		}
 		/* nth-child 중간자식을 선택할때 쓰는 단어 */
 		.edu_table tr:nth-child(even){
-			background-color: #EBF6C9;
+			background-color: #f1f1f1;
 		}
+		/*.edu_table tr:nth-child(odd){
+			background-color: #6a92cc85;
+		}*/
 		.edu_table td:first-child, .edu_table td:last-child{
 			text-align: center;
 		}
@@ -164,15 +174,14 @@
 			padding: 8px 20px;
 			color: white;
 			border-radius:5px;
-			background-color: #9CDDA9;
-		}
-		.download_wrap div a{
-			transition: transform .3s;
-		}
+			background-color: #ffb471;
+		}msg_wrap
+
 		.download_wrap div a:hover{
 			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
-			transform: scale(1.3);
+			
 		}
+		
 		.fix_btn{
 			position: fixed;
 			right: 30px;
@@ -196,17 +205,17 @@
 		}
 		.top_btn{
 			bottom: 115px;
-			background-color: #85CDA7;
+			background-color: #ffb471;
 		}
-		.conn_btn{
+		.conn_btn, .close_btn{
 			bottom: 30px;
-			background-color: #85CDA7;
+			background-color: #eb8f90;
 		}
 		.msg_wrap{
 			position: absolute;
-			bottom: 0;
-			right: 90px;
-			background-color: #f1f1f1;
+			bottom: 30px;
+			right: 130px;
+			background-color: white;
 			border-radius: 5px;
 			border: 1px solid #2f3138;
 			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
@@ -214,41 +223,93 @@
 		.note_wrap{
 			padding: 15px;
 			font-size: 17px;
-			width: 360px;
+			width: 700px;
+			color: black;
 		}
 		.send_info{
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 		}
-		.send_info > input{
-			width: 150px;
-		}
 		.note_wrap > div{
 			margin-bottom: 7px;
+		}
+		.note_wrap input{
+			font-size: 20px;
+			color: #2f3138;
+			outline: none;
+			height: 35px;
+			padding: 7px 0 6px;
+			border: 0;
+			width: 100%;
+		}
+		.send_name, .send_email, .send_msg{
+			border: 1px solid #2f3138;
+			padding: 10px 15px 10px 15px;
+			width: 100%;
+		}
+		.area{ width: 20px; }
+		.send_btn {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.send_btn > a{
+			width:200px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 12px 15px;
+			border: 1px solid #2f3138;
+			border-radius: 5px;
+		}
+		.err_msg{
+			color: red;
+			font-size: 20px;
+			visibility: hidden;
+		}
+		.conn_note{
+			font-size: 20px;
+		}
+		.modal_wrap{
+			position: fixed;
+			z-index: 100;
+			background-color: rgba(0,0,0,0.3);
+			overflow: auto;
+			width: 100%;
+			height: 100%;
+			display: none;
 		}
 	</style>
 </head>
 <body>
 	<div class="top_btn fix_btn"><i class="fas fa-chevron-up"></i></div>
-	<div class="conn_btn fix_btn">
+	<div class="conn_btn fix_btn"><i class="fas fa-envelope"></i></div>
+	<div class="modal_wrap">
+		<div class="close_btn fix_btn"><i class="fas fa-times"></i></div>
 		<div class="msg_wrap">
 			<div class="menu_title"><i class="fas fa-envelope"></i><span>Message</span></div>
 			<div class="note_wrap">
 				<div class="conn_note">Plese contact me if you are interested.</div>
 				<div class="send_info">
-					<input type="text" placeholder="Name">
-					<input type="text" placeholder="Email">
+					<div class="send_name">
+						<input type="text" class="send_input" placeholder="Name">
+					</div>
+					<div class="area"> </div>
+					<div class="send_email">
+						<input type="text" class="send_input" placeholder="Email">
+					</div>
 				</div>
 				<div class="send_msg">
-					<input type="text" placeholder="Message">
+					<input type="text" class="send_input" placeholder="Message">
 				</div>
 				<div class="send_btn">
+					<span class="err_msg">Please enter a value :/</span>
 					<a href="#"><i class="fas fa-paper-plane"></i>&nbsp;SEND MESSAGE</a>
 				</div>
 			</div>
 		</div>	
-		<i class="fas fa-envelope"></i></div>
+	</div>
 	<div class="wrap">
 		<aside>
 			<div class="side_wrap">
@@ -297,11 +358,11 @@
 				<div class="nav common_panel layer">
 					<div class="menu_title"><i class="fas fa-cloud-download-alt"></i><span>Downloads</span></div>
 					<div class="content_padding download_wrap">
-						<div class="git_wrap">
-							<a href="https://github.com/adlwjdghk" target="_blank">Github<i class="fab fa-github"></i></a>
+						<div class="git_wrap download_text">
+							<a href="https://github.com/adlwjdghk" target="_blank">Github&nbsp;<i class="fab fa-github"></i></a>
 						</div>
-						<div class="resume_wrap">
-							<a href="#">Resume<i class="fas fa-download"></i></a>
+						<div class="resume_wrap download_text">
+							<a href="#">Resume&nbsp;<i class="fas fa-download"></i></a>
 						</div>
 					</div>
 				</div>	
@@ -344,10 +405,10 @@
 							</thead>
 							<tbody>
 								<tr><td>1</td><td>응용SW엔지니어링 디지털 컨버젼스 SpringMVC 웹 서비스 개발자 양성과정</td><td>한국경영원 인재개발원</td><td>2019.11.12~2020.06.12</td></tr>
-								<!-- <tr><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+								<tr><td>2</td><td>1</td><td>1</td><td>1</td></tr>
 								<tr><td>3</td><td>1</td><td>1</td><td>1</td></tr>
 								<tr><td>4</td><td>1</td><td>1</td><td>1</td></tr>
-								<tr><td>5</td><td>1</td><td>1</td><td>1</td></tr>  -->
+								<tr><td>5</td><td>1</td><td>1</td><td>1</td></tr>
 							</tbody>
 						</table>
 					</div>
@@ -394,5 +455,48 @@
 		});
 	});
 	// 바깥으로 다 뺐다가 조금씩 들어오게 만든것 
+	jQuery(document).on('blur','.send_input',function() {
+		// console.log('나갔음ㅠ');
+		// java에서 println같이 확인하는 용도로 사용함 많이쓸것 
+		var inputVal = $(this).val();
+		console.log('값: '+inputVal);	
+	});
+	$(document).on('blur','.send_input',function() {
+		var inputVal = $(this).val();
+	
+		// input blur시 유효성 체크 (테두리 및 경고메시지 출력)
+		if(inputVal == ''){
+			$('.err_msg').css('visibility','visible');
+			$(this).parent().css('border', '1px solid red');
+		} else{
+			$('.err_msg').css('visibility','hidden');
+			$(this).parent().css('border', '1px solid #2f3138');
+		}
+		
+		// input값을 모두 비교하여 값이 있으면 버튼색상 변경 
+		var code = 0;
+		$('.note_wrap').find('.send_input').each(function() {
+			if($(this).val() == ''){
+				return false; // == java의 break; 반복문종료 
+			} else {
+				code += 1;
+			}
+		});
+		if(code == 3){
+			$('.send_btn > a').css('background-color', '#adbed2')
+							  .css('color', 'white');
+		} else {
+			$('.send_btn > a').css('background-color', 'white')
+							  .css('color', 'black');
+		}
+	});
+	$(document).on('click', '.conn_btn', function() {
+		$('.modal_wrap').css('display','block');
+		$(this).css('display','none');
+	});
+	$(document).on('click', '.close_btn', function() {
+		$('.modal_wrap').css('display','none');
+		$('.conn_btn').css('display','flex');
+	});
 </script>
 </html>
